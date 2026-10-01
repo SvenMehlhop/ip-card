@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "0.9",
+  "basicInfo": {
+    "ipName": "TCCP-CO",
+    "version": "1.0",
+    "sourceLanguages": [
+      "C++"
+    ],
+    "trl": "TRL-6",
+    "status": "Prototype implemented",
+    "comment": "Compiler for Timing Contracts Coprocessor (TCCP), compiles contract DSL definitions to DPRAM configuration binary representation (CSV).",
+    "provider": [
+      {
+        "organizationName": "OFFIS e.V.",
+        "organizationURL": "https://www.offis.de",
+        "organizationAlias": [
+          "OFFIS"
+        ]
+      }
+    ],
+    "license": "Apache-2.0",
+    "repositoryURL": "https://github.com/offis/isolde-tccp",
+    "project": "ISOLDE",
+    "workItem": "4.1",
+    "ipType": {
+      "category": [
+        "Software Tool",
+        "Compiler"
+      ],
+      "domain": [
+        "Safety",
+        "Security"
+      ]
+    }
+  },
+
+  "systemLevelInfo": {
+    "architecture": "RISC-V",
+    "processor": "CVA6",
+    "isaExtension": "NA",
+    "board": "Xilinx VCU104/ Genesys 2",
+    "SOC": "NA",
+    "SWDependencies": "Linux",
+    "requiresSpecializedTool": "No"
+  },
+
+  "interfaces": {
+    "CLI": [
+      "./build/tccp_co <project_name> [--debug]"
+    ],
+    "API": [
+      "NA"
+    ],
+    "inputArtifacts": [
+      {
+        "artifact": "Contract DSL file",
+        "format": "txt"
+      },
+      {
+        "artifact": "Object dump file",
+        "format": "dump"
+      },
+      {
+        "artifact": "test code including contracts",
+        "format": "Assembly"
+      }
+    ],
+    "outputArtifacts": [
+      {
+        "artifact": "Compiled contracts binary representation",
+        "format": "csv"
+      },
+      {
+        "artifact": "Human-readable contract summary",
+        "format": "md"
+      }
+    ]
+  },
+  "deployment": {
+    "bundle": "Executable binary"
+  }
+}

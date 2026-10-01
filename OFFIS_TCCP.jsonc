@@ -1,0 +1,97 @@
+{
+  "basicInfo": {
+    "licensing": "Open-source (Apache-2.0)",
+    "targetFpgaOrAsic": "FPGA, ASIC",
+    "designLanguage": "SystemC, SystemVerilog"
+  },
+  "systemLevelFeatures": {
+    "couplingType": "Loosely-coupled",
+    "dataTypes": [
+      "uint64"
+    ],
+    "isa": "RISC-V",
+    "peakOpsPerCycle": "1 event/cycle",
+    "interfaces": [
+      "TIP (Trace Ingress Port) (Observer, optional)",
+      "ITI (Instruction Trace Interface) (Observer, optional)",
+      "Camera (Observer, optional)",
+      "ROS (Observer, optional)",
+      "Platon_HW (Observer, optional)"
+    ],
+    "supportedOperations": [
+      "Timing contract monitoring (Periodic, Reaction, Aging, TSBC, TSBC PC)"
+    ],
+    "compilerSupport": "TCCP-CO Compiler",
+    "externalMemoryRequired": false,
+    "cacheOrScratchpad": "DPRAM"
+  },
+  "architecture": {
+    "type": "Coprocessor / Monitoring Unit",
+    "numClockDomains": "1+, tested with 6",
+    "controlInterface": {
+      "isaExtension": null,
+      "memoryMapped": false,
+      "protocol": "DPRAM interface for configuration loading"
+    },
+    "memoryInterface": {
+      "interfaceProtocol": "DPRAM",
+      "hierarchyLevel": null,
+      "cached": false,
+      "iommu": false
+    },
+    "interrupts": "Yes (violation and fifo_overflow signals)"
+  },
+  "microarchitecture": {
+    "parametrization": {
+      "parametricNumUnits": "Yes (configurable TRACEIFs and CONTRACTS template parameters)",
+      "parametricConfig": "Yes (number of trace interfaces and watchdog contracts)"
+    },
+    "programmability": {
+      "programmableCores": false,
+      "isaExtension": null
+    }
+  },
+  "software": {
+    "compiler": {
+      "requiresSpecializedCompiler": true,
+      "supportedCompilers": [
+        "TCCP-CO"
+      ]
+    },
+    "hardwareAbstractionLayer": {
+      "halFunctions": null
+    },
+    "highLevelApi": {
+      "hasHighLevelApi": false,
+      "sdkRepository": null,
+      "hasDomainSpecificCompiler": true
+    }
+  },
+  "integration": {
+    "ipDistribution": {
+      "manifestType": "Makefile",
+      "standaloneSimulation": true,
+      "standaloneSimulationSwRequirements": "SystemC 2.3.3, Make, GCC/Clang",
+      "integrationDocsOrExamples": "README.md, SystemC/TCCP/README.md"
+    },
+    "synthesis": {
+      "isSynthesizable": true,
+      "fpgaSynthesisExamples": "Only as prototype",
+      "asicSynthesisExamples": null
+    },
+    "simulation": {
+      "closedSourceSimulation": null,
+      "openSourceSimulation": "SystemC simulation, SystemVerilog simulation only as prototype"
+    },
+    "evaluation": {
+      "ppaResultsAvailable": true
+    }
+  },
+  "physicalImplementation": {
+    "asicArea": {
+      "numGates": null,
+      "onChipInternalMemorySize": null,
+      "targetClockFrequency": null
+    }
+  }
+}

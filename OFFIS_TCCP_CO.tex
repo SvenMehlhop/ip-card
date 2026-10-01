@@ -1,0 +1,102 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[landscape,margin=10mm,headsep=4mm,footskip=6mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\setlength{\parindent}{0pt}
+\setlength{\LTpre}{1mm}
+\setlength{\LTpost}{1mm}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.14}
+\definecolor{ISOLDEBlue}{HTML}{1F5A8E}
+\definecolor{ISOLDELight}{HTML}{EEF4F9}
+\definecolor{ISOLDEBorder}{HTML}{B8C7D5}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{\scriptsize SW IP Card schema v0.9 | Generated from validated JSONC}
+\rfoot{\scriptsize Page \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\SectionRow}[1]{%
+  \rowcolor{ISOLDEBlue}\multicolumn{3}{@{}l@{}}{\color{white}\bfseries\large\strut #1}\\[-0.2mm]
+}
+\newcommand{\LabelCell}[1]{\textbf{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries TCCP-CO}\\[1.5mm]
+{\small OFFIS | ISOLDE | 4.1 | Version 1.0}
+\end{center}
+\vspace{1mm}
+\begin{longtable}{@{}L{0.23\textwidth}L{0.25\textwidth}L{0.48\textwidth}@{}}
+\arrayrulecolor{ISOLDEBorder}
+\SectionRow{Schema Version}
+\LabelCell{} &  & 0.9 \\ \hline
+\SectionRow{Basic Information}
+\rowcolor{ISOLDELight}
+\LabelCell{IP Name} &  & TCCP-CO \\ \hline
+\LabelCell{Version} &  & 1.0 \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Source Languages} &  &  \textbullet\ C++ \\ \hline
+\LabelCell{TRL} &  & TRL-6 \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Status} &  & Prototype implemented \\ \hline
+\LabelCell{Comment} &  & Compiler for Timing Contracts Coprocessor (TCCP), compiles contract DSL definitions to DPRAM configuration binary representation (CSV). \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Provider} & Item 1 / Organization Name & OFFIS e.V. \\ \hline
+\LabelCell{Provider} & Item 1 / Organization URL & https://www.offis.de \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Provider} & Item 1 / Organization Alias &  \textbullet\ OFFIS \\ \hline
+\LabelCell{License} &  & Apache-2.0 \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Repository URL} &  & https://github.com/offis/isolde-tccp \\ \hline
+\LabelCell{Project} &  & ISOLDE \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Work Item} &  & 4.1 \\ \hline
+\LabelCell{IP Type} & Category &  \textbullet\ Software Tool \newline \textbullet\ Compiler \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{IP Type} & Domain &  \textbullet\ Safety \newline \textbullet\ Security \\ \hline
+\SectionRow{System-Level Information}
+\LabelCell{Architecture} &  & RISC-V \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Processor} &  & CVA6 \\ \hline
+\LabelCell{ISAExtension} &  & NA \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Board} &  & Xilinx VCU104/ Genesys 2 \\ \hline
+\LabelCell{SoC} &  & NA \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{SW Dependencies} &  & Linux \\ \hline
+\LabelCell{Requires Specialized Tool} &  & No \\ \hline
+\SectionRow{Interfaces and Artifacts}
+\rowcolor{ISOLDELight}
+\LabelCell{CLI} &  &  \textbullet\ ./build/tccp\_co $<$project\_name$>$ [--debug] \\ \hline
+\LabelCell{API} &  &  \textbullet\ NA \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Input Artifacts} & Item 1 / Artifact & Contract DSL file \\ \hline
+\LabelCell{Input Artifacts} & Item 1 / Format & txt \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Input Artifacts} & Item 2 / Artifact & Object dump file \\ \hline
+\LabelCell{Input Artifacts} & Item 2 / Format & dump \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Input Artifacts} & Item 3 / Artifact & test code including contracts \\ \hline
+\LabelCell{Input Artifacts} & Item 3 / Format & Assembly \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Output Artifacts} & Item 1 / Artifact & Compiled contracts binary representation \\ \hline
+\LabelCell{Output Artifacts} & Item 1 / Format & csv \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Output Artifacts} & Item 2 / Artifact & Human-readable contract summary \\ \hline
+\LabelCell{Output Artifacts} & Item 2 / Format & md \\ \hline
+\SectionRow{Deployment}
+\rowcolor{ISOLDELight}
+\LabelCell{Bundle} &  & Executable binary \\ \hline
+\end{longtable}
+\end{document}

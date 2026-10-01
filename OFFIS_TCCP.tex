@@ -1,0 +1,117 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[landscape,margin=10mm,headsep=4mm,footskip=6mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\setlength{\parindent}{0pt}
+\setlength{\LTpre}{1mm}
+\setlength{\LTpost}{1mm}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.14}
+\definecolor{ISOLDEBlue}{HTML}{1F5A8E}
+\definecolor{ISOLDELight}{HTML}{EEF4F9}
+\definecolor{ISOLDEBorder}{HTML}{B8C7D5}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{\scriptsize HW IP Card | Generated from validated JSONC}
+\rfoot{\scriptsize Page \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\SectionRow}[1]{%
+  \rowcolor{ISOLDEBlue}\multicolumn{3}{@{}l@{}}{\color{white}\bfseries\large\strut #1}\\[-0.2mm]
+}
+\newcommand{\LabelCell}[1]{\textbf{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Hardware IP Card}\\[1.5mm]
+{\small }
+\end{center}
+\vspace{1mm}
+\begin{longtable}{@{}L{0.23\textwidth}L{0.25\textwidth}L{0.48\textwidth}@{}}
+\arrayrulecolor{ISOLDEBorder}
+\SectionRow{Basic Information}
+\LabelCell{Licensing} &  & Open-source (Apache-2.0) \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Target FPGA or ASIC} &  & FPGA, ASIC \\ \hline
+\LabelCell{Design Language} &  & SystemC, SystemVerilog \\ \hline
+\SectionRow{System-Level Features}
+\rowcolor{ISOLDELight}
+\LabelCell{Coupling Type} &  & Loosely-coupled \\ \hline
+\LabelCell{Data Types} &  &  \textbullet\ uint64 \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{ISA} &  & RISC-V \\ \hline
+\LabelCell{Peak Ops Per Cycle} &  & 1 event/cycle \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Interfaces} &  &  \textbullet\ TIP (Trace Ingress Port) (Observer, optional) \newline \textbullet\ ITI (Instruction Trace Interface) (Observer, optional) \newline \textbullet\ Camera (Observer, optional) \newline \textbullet\ ROS (Observer, optional) \newline \textbullet\ Platon\_HW (Observer, optional) \\ \hline
+\LabelCell{Supported Operations} &  &  \textbullet\ Timing contract monitoring (Periodic, Reaction, Aging, TSBC, TSBC PC) \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Compiler Support} &  & TCCP-CO Compiler \\ \hline
+\LabelCell{External Memory Required} &  & false \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Cache Or Scratchpad} &  & DPRAM \\ \hline
+\SectionRow{Architecture}
+\LabelCell{Type} &  & Coprocessor / Monitoring Unit \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Num Clock Domains} &  & 1+, tested with 6 \\ \hline
+\LabelCell{Control Interface} & ISAExtension &  \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Control Interface} & Memory Mapped & false \\ \hline
+\LabelCell{Control Interface} & Protocol & DPRAM interface for configuration loading \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Memory Interface} & Interface Protocol & DPRAM \\ \hline
+\LabelCell{Memory Interface} & Hierarchy Level &  \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Memory Interface} & Cached & false \\ \hline
+\LabelCell{Memory Interface} & IOMMU & false \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Interrupts} &  & Yes (violation and fifo\_overflow signals) \\ \hline
+\SectionRow{Microarchitecture}
+\LabelCell{Parametrization} & Parametric Num Units & Yes (configurable TRACEIFs and CONTRACTS template parameters) \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Parametrization} & Parametric Config & Yes (number of trace interfaces and watchdog contracts) \\ \hline
+\LabelCell{Programmability} & Programmable Cores & false \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Programmability} & ISAExtension &  \\ \hline
+\SectionRow{Software}
+\LabelCell{Compiler} & Requires Specialized Compiler & true \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Compiler} & Supported Compilers &  \textbullet\ TCCP-CO \\ \hline
+\LabelCell{Hardware Abstraction Layer} & HAL Functions &  \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{highLevelAPI} & Has High Level API & false \\ \hline
+\LabelCell{highLevelAPI} & SDK Repository &  \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{highLevelAPI} & Has Domain Specific Compiler & true \\ \hline
+\SectionRow{Integration}
+\LabelCell{IP Distribution} & Manifest Type & Makefile \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{IP Distribution} & Standalone Simulation & true \\ \hline
+\LabelCell{IP Distribution} & Standalone Simulation SW Requirements & SystemC 2.3.3, Make, GCC/Clang \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{IP Distribution} & Integration Docs Or Examples & README.md, SystemC/TCCP/README.md \\ \hline
+\LabelCell{Synthesis} & Is Synthesizable & true \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Synthesis} & FPGA Synthesis Examples & Only as prototype \\ \hline
+\LabelCell{Synthesis} & ASIC Synthesis Examples &  \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Simulation} & Closed Source Simulation &  \\ \hline
+\LabelCell{Simulation} & Open Source Simulation & SystemC simulation, SystemVerilog simulation only as prototype \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{Evaluation} & PPA Results Available & true \\ \hline
+\SectionRow{Physical Implementation}
+\LabelCell{ASIC Area} & Num Gates &  \\ \hline
+\rowcolor{ISOLDELight}
+\LabelCell{ASIC Area} & On Chip Internal Memory Size &  \\ \hline
+\LabelCell{ASIC Area} & Target Clock Frequency &  \\ \hline
+\end{longtable}
+\end{document}
